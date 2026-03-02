@@ -1,0 +1,151 @@
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+    transition: all 0.3s ease;
+}
+
+#musicToggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(211, 47, 47, 0.6);
+}
+
+#musicToggle i {
+    font-size: 1.3rem;
+}
+
+/* 动画 */
+@keyframes swing {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes fireworks {
+    0% { 
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+        opacity: 0.3;
+    }
+    50% { 
+        background-position: 10% 20%, 90% 80%, 60% 70%;
+        opacity: 0.5;
+    }
+    100% { 
+        background-position: 20% 40%, 80% 60%, 40% 90%;
+        opacity: 0.3;
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 80px 15px 30px;
+    }
+    
+    .dragon-horse-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .dragon-horse-title h2 {
+        font-size: 1.3rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .image-placeholder {
+        height: 250px;
+    }
+    
+    .image-placeholder i {
+        font-size: 50px;
+    }
+    
+    .poem {
+        font-size: 1.4rem;
+    }
+    
+    .countdown-timer {
+        gap: 10px;
+    }
+    
+    .time-unit {
+        min-width: 70px;
+        padding: 15px;
+    }
+    
+    .time-unit .number {
+        font-size: 1.8rem;
+    }
+    
+    .footer-logo h3 {
+        font-size: 2rem;
+    }
+    
+    .lantern {
+        width: 40px;
+        height: 60px;
+    }
+    
+    .lantern i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dragon-horse-title h1 {
+        font-size: 2rem;
+    }
+    
+    .festival-info, .meaning-grid, .interactive-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .countdown-timer {
+        flex-wrap: wrap;
+    }
+    
+    .floating-blessings {
+        display: none;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .lanterns, .fireworks, .music-control, .floating-blessings {
+        display: none;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .header, .info-card, .meaning-item, .lantern-riddle, .countdown {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
